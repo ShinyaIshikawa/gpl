@@ -1,0 +1,8 @@
+$ go test -bench=.
+goos: darwin
+goarch: amd64
+pkg: github.com/ShinyaIshikawa/gpl/ch1/ex1_3
+BenchmarkStringsJoin-4   	     100	  11835292 ns/op
+BenchmarkStringPlus-4    	       1	14896961199 ns/op
+PASS
+ok  	github.com/ShinyaIshikawa/gpl/ch1/ex1_3	16.120s

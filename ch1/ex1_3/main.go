@@ -7,7 +7,6 @@ import (
 
 func main() {
 	fmt.Println(stringsJoin())
-	// ベンチマーク　14495076485 ns
 }
 
 func stringPlus() string {
