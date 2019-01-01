@@ -33,8 +33,10 @@ func main() {
 			f.Close()
 		}
 	}
-	for line, fname := range files {
-		fmt.Printf("keyword %s  in  %s\n", line, fname)
+	for line, cnt := range counts {
+		if cnt > 1 {
+			fmt.Printf("Keyword %s is duplicate. Written in %s\n", line, files[line])
+		}
 	}
 }
 
@@ -45,7 +47,7 @@ func countLines(f *os.File, counts map[string]int, files map[string]string) {
 		if counts[input.Text()] == 1 {
 			files[input.Text()] = f.Name()
 		} else {
-			if strings.Contains(files[input.Text()], f.Name()) {
+			if !strings.Contains(files[input.Text()], f.Name()) {
 				files[input.Text()] += " " + f.Name()
 			}
 		}
